@@ -1,3 +1,0 @@
-[% IF sent_confirm_id_ref ~%]
-Reference: LBS-[% sent_confirm_id_ref %]
-[%~ END %]

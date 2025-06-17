@@ -1,0 +1,46 @@
+Temat: Zgłoszenie problemu: [% report.title %]
+
+Szanowni Państwo [% bodies_name %],
+
+[% missing %][% multiple %]Użytkownik serwisu
+[% site_name %] zgłosił następujący problem lokalny, który może wymagać Państwa uwagi.
+
+[% fuzzy %], lub aby zaktualizować zgłoszenie,
+proszę odwiedzić poniższy link:
+
+    [% url %]
+
+[% has_photo %]----------
+
+Imię i nazwisko: [% report.name %]
+
+E-mail: [% report.user.email OR "Brak podanego" %]
+
+Telefon: [% report.user.phone OR "Brak podanego" %]
+
+Kategoria: [% report.category %]
+
+Temat: [% report.title %]
+
+Szczegóły: [% report.detail %]
+
+[% FOR field IN report.get_extra_fields %][% IF field.value ~%]
+[% field.description OR field.name %]: [% field.value %]
+
+[% END %][% END ~%]
+
+Szerokość geograficzna: [% report.latitude %]
+
+Długość geograficzna: [% report.longitude %]
+
+Zobacz mapę OpenStreetMap tej lokalizacji: [% osm_url %]
+
+[% closest_address %]----------
+
+Odpowiedzi na ten e-mail trafią do użytkownika, który zgłosił problem.
+
+[% signature %]
+
+Jeśli istnieje bardziej odpowiedni adres e-mail do spraw dotyczących
+[% category_footer %], prosimy o poinformowanie nas. Pomoże to poprawić
+usługę dla lokalnej społeczności. Czekamy również na wszelkie inne uwagi, które mogą Państwo mieć.

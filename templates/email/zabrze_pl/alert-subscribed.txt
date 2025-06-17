@@ -1,0 +1,15 @@
+Temat: Subskrypcja powiadomień z [% site_name %]
+
+Zostałeś(-aś) zapisany(-a) na powiadomienia [% site_name %] dotyczące zgłoszenia [% problem.title %].
+
+[% problem_url %]
+
+Powiadomienia e-mail to bezpłatna usługa serwisu [% site_name %].
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail – prosimy na nią nie odpowiadać.
+
+[% signature %]
+
+Chcesz się wypisać?
+
+Jeśli nie chcesz już otrzymywać powiadomień o aktualizacjach tego zgłoszenia, kliknij poniższy link: [% unsubscribe_url %]

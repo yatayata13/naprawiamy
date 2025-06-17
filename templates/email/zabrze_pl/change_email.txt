@@ -1,0 +1,11 @@
+Subject: Updating your [% site_name %] email address
+
+Please click on the link below to confirm you wish to update your
+email address on [% site_name %].
+
+[% c.uri_for_action( 'auth/token', token ) %]
+
+[% signature %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail - prosimy
+na nią nie odpowiadać.

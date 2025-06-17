@@ -1,0 +1,36 @@
+Temat: Twoje zgłoszenie na [% site_name %] zostało zmoderowane
+
+Witaj [% user.name %],
+
+Twoje zgłoszenie na [% site_name %] zostało zmoderowane.
+
+[% IF types == 'hide' -%]
+Zgłoszenie zostało ukryte na stronie.
+[% ELSE %]
+Poniższe dane zostały zmienione:
+
+	[% types %]
+
+[% END -%]
+
+Tytuł zgłoszenia:
+
+[% moderated_data.title %]
+
+Szczegóły:
+
+[% moderated_data.detail %]
+
+[% UNLESS types == 'hide' %]
+Możesz zobaczyć zgłoszenie pod adresem [% report_uri %]
+[% END %]
+
+Jeśli uważasz, że to zgłoszenie nie powinno być moderowane, możesz skontaktować się z zespołem pod adresem [% report_complain_uri %]
+
+Dziękujemy za przesłanie zgłoszenia przez [% site_name %].
+
+
+[% signature %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail - prosimy
+na nią nie odpowiadać.

@@ -1,0 +1,23 @@
+Temat: Ankieta dotycząca Twojego zgłoszenia [% site_name %]: '[% report.title %]'
+
+Witaj [% report.name %],
+
+[% created %] temu zgłosiłeś(-aś) problem za pomocą serwisu [% site_name %].
+
+Szczegóły zgłoszenia znajdziesz na końcu tej wiadomości.
+
+Aby pomóc nam utrzymać [% site_name %] aktualnym i przydatnym, prosimy o wypełnienie krótkiej ankiety dotyczącej statusu Twojego problemu. Kliknij poniższy link:
+
+    [% url %]
+
+[% signature %]
+
+Twoje zgłoszenie:
+
+[% report.title %]
+
+[% report.detail %]
+
+[% TRY %][% INCLUDE '_questionnaire-report-id.txt' %][% CATCH file %][% END %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail – prosimy na nią nie odpowiadać.

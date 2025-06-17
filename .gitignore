@@ -4,6 +4,9 @@
 ._*
 .DS_Store
 
+/docs
+/notes
+
 # Compiled templates
 *.ttc
 

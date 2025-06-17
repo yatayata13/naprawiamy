@@ -1,0 +1,15 @@
+Temat: Potwierdź powiadomienie [% site_name %]
+
+Kliknij poniższy link, aby potwierdzić powiadomienie e-mail [% site_name %].
+
+   [% token_url %]
+
+Jeśli nie możesz kliknąć w link, skopiuj go i wklej do paska adresu przeglądarki.
+
+To potwierdza, że chcesz otrzymywać powiadomienia e-mail, gdy ktoś doda zgłoszenie na [% site_name %] w wybranym przez Ciebie obszarze.
+
+Powiadomienia e-mail są bezpłatną usługą serwisu [% site_name %].
+
+[% signature %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail – prosimy na nią nie odpowiadać.

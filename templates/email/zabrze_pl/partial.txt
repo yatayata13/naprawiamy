@@ -1,0 +1,16 @@
+Subject: Potwierdź swoje zgłoszenie w [% site_name %]
+
+Witaj [% report.name || report.email %],
+
+Aby potwierdzić zgłoszenie w [% site_name %]
+za pośrednictwem [% report.service %] oraz aby sprawdzić lub dodać szczegóły, odwiedź
+poniższy adres URL:
+
+[% token_url %]
+
+Dziękujemy!
+
+[% signature %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail - prosimy
+na nią nie odpowiadać.

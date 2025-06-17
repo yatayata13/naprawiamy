@@ -1,0 +1,33 @@
+Temat: Potwierdź swoje zgłoszenie na [% site_name %]
+
+Witaj [% report.name %],
+
+Kliknij poniższy link, aby potwierdzić, że chcesz wysłać swoje zgłoszenie do [% report.body %].
+[% IF report.non_public %]Uwaga: Twoje zgłoszenie nie będzie opublikowane publicznie na stronie [% site_name %], ale zostanie wysłane do [% report.body %].
+[% ELSE %]Uwaga: Twoje zgłoszenie pojawi się również na stronie [% site_name %].[% END %]
+
+[% token_url %]
+
+Jeśli Twój program pocztowy nie pozwala kliknąć w ten link, skopiuj go i wklej do przeglądarki, a następnie naciśnij Enter.
+[% IF c.cobrand.is_council && !c.cobrand.owns_problem( report ) %]
+Uwaga: [% c.cobrand.council_name %] nie jest odpowiedzialny za ten typ problemu, więc zgłoszenie zostanie przekazane do [% report.body %].
+[% END %]
+[% TRY %][% INCLUDE '_problem-confirm_extra.txt' %][% CATCH file %][% END %]
+Tytuł Twojego zgłoszenia:
+
+[% report.title %]
+
+Szczegóły:
+
+[% report.detail %]
+
+Jeśli nie chcesz już wysyłać tego zgłoszenia, nie podejmuj żadnych działań.
+
+Dziękujemy za zgłoszenie problemu przez [% site_name %].
+
+
+
+[% signature %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail - prosimy
+na nią nie odpowiadać.

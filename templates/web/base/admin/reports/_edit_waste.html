@@ -85,8 +85,8 @@
   [% IF problem.get_extra_field_value('uprn') %]
     <li>UPRN: [% problem.get_extra_field_value('uprn') %]
   [% END %]
-  [% IF problem.waste_property_id %]
-    <li>Property ID: <a href="/waste/[% problem.waste_property_id %]">[% problem.waste_property_id %]</a>
+  [% IF problem.get_extra_field_value('property_id') %]
+    <li>Property ID: <a href="/waste/[% problem.get_extra_field_value('property_id') %]">[% problem.get_extra_field_value('property_id') %]</a>
   [% END %]
   [% IF problem.get_extra_field_value('service_id') %]
     <li>Service ID: [% problem.get_extra_field_value('service_id') %]
@@ -112,20 +112,13 @@
 [%
 BLOCK show_fields;
     FOR field IN fields;
-        IF field.2; # From metadata
+        IF field.2;
             SET val = problem.get_extra_metadata(field.1);
         ELSE;
             SET val = problem.get_extra_field_value(field.1);
         END;
         IF val;
-            '<li>' _ field.0 _ ': ';
-            IF field.3; # Blank out except last 4
-                SET x = 'x';
-                x.repeat(val.length - 4) _ val.substr(-4);
-            ELSE;
-                val;
-            END;
-            '</li>';
+            '<li>' _ field.0 _ ': ' _ val _ '</li>';
         END;
     END;
 END
@@ -178,20 +171,6 @@ END
 </ul>
 [% END %]
 
-[% IF (c.cobrand.moniker == 'sutton' || c.cobrand.moniker == 'kingston') AND problem.get_extra_field_value('Paid_Container_Type') %]
-<h2>Subscription information</h2>
-<ul>
-[% INCLUDE show_fields fields=[
-    [ 'Subscription container', 'Paid_Container_Type' ],
-    [ 'Subscription quantity', 'Paid_Container_Quantity' ],
-    [ 'Delivery container', 'Container_Type' ],
-    [ 'Delivery quantity', 'Quantity' ],
-    [ 'Current containers', 'current_containers' ],
-    [' New containers', 'new_containers' ],
-] %]
-</ul>
-[% END %]
-
 [% IF c.cobrand.moniker == 'brent' %]
     [% IF problem.get_extra_field_value('Container_Request_Container_Type') %]
         <h2>Request information</h2>
@@ -223,9 +202,7 @@ END
 
 <h2>Payment information</h2>
 <ul>
-[%
-SET sutton = cobrand.moniker == 'sutton';
-INCLUDE show_fields fields=[
+[% INCLUDE show_fields fields=[
     [ 'Payment', 'payment' ],
     [ 'Pro rata payment', 'pro_rata' ],
     [ 'Admin fee', 'admin_fee' ],
@@ -233,12 +210,8 @@ INCLUDE show_fields fields=[
     [ 'Payment reference', 'chequeReference', 1 ],
     [ 'DD reference', 'payerReference', 1 ],
     [ 'SCP reference', 'scpReference', 1 ],
-    [ 'Payment code', 'PaymentCode', 0, sutton ],
+    [ 'Payment code', 'PaymentCode' ],
     [ 'DD collection date', 'dd_date', 1 ],
-    # AccessPay
-    [ 'DD customer ID', 'direct_debit_customer_id', 1 ],
-    [ 'DD contract ID', 'direct_debit_contract_id', 1 ],
-    [ 'DD reference', 'direct_debit_reference', 1 ],
 ] %]
 [%
 SET payment_method = problem.get_extra_field_value('LastPayMethod');

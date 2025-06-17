@@ -84,15 +84,11 @@
 [% BLOCK checkboxes %]
   <fieldset class="govuk-fieldset" aria-describedby="[% IF field.get_tag('hint') %][% field.id %]-hint [% END %][% IF error %][% field.id %]-error[% END %]">
 [% IF field.label %]
-    [% IF field.get_tag('safe') == 'label' %]
-      [% field.label | safe %]
-    [% ELSE %]
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h2 class="govuk-fieldset__heading">
-            [% field.label %]
-        </h2>
-      </legend>
-    [% END %]
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h2 class="govuk-fieldset__heading">
+        [% field.label %]
+      </h2>
+    </legend>
 [% END %]
 [% IF field.get_tag('hint') %]
     <div id="[% field.id %]-hint" class="govuk-hint">[% field.get_tag('hint') %]</div>
@@ -275,13 +271,7 @@
 
 [% BLOCK select %]
     <label class="govuk-label" for="[% field.id %]">
-      [% IF field.get_tag('label_as_heading') %]
-        <h2 class="govuk-fieldset__heading">
-          [% field.label %]
-        </h2>
-      [% ELSE %]
         [% field.label %]
-      [% END %]
     </label>
   [% IF field.get_tag('hint') %]
     <div id="[% field.id %]-hint" class="govuk-hint">
@@ -374,5 +364,5 @@
 [% END %]
 
 [% BLOCK notice %]
-    [% mark_safe(field.label) | html_para_conditional | replace('<p>', '<p class="govuk-body">') %]
+    <p class="govuk-body-l">[% field.label %]</p>
 [% END %]

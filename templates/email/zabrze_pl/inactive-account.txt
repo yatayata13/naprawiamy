@@ -1,0 +1,18 @@
+Temat: Twoje nieaktywne konto na [% site_name %]
+
+Witaj [% user.name %],
+
+Twoje konto [% user.username %] na [% site_name %] jest nieaktywne od [% email_from %]
+[% nget('miesiąc', 'miesięcy', email_from) %], a my automatycznie usuwamy
+konta, które są nieaktywne po [% anonymize_from %]
+[% nget('miesiąc', 'miesięcy', anonymize_from) %]. Jeśli chcesz zachować swoje
+konto, zaloguj się na stronie – to utrzyma je aktywnym:
+
+[% url %]
+
+Dziękujemy za korzystanie z serwisu.
+
+[% INCLUDE 'signature.txt' %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail – prosimy
+na nią nie odpowiadać.

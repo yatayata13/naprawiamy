@@ -1,0 +1,28 @@
+Temat: Zamknięcie starych zgłoszeń na [% site_name %]
+
+Witaj [% user.name %],
+
+[% site_name %] jest aktualizowany w [% cobrand.council_area %], aby usprawnić zgłaszanie problemów.
+
+W ramach tego procesu zamykamy wszystkie zgłoszenia utworzone przed aktualizacją.
+
+Zauważyliśmy, że masz [% report_count %] starych [% nget('zgłoszenie', 'zgłoszenia', report_count) %] w systemie, które wymieniamy poniżej.
+
+Wszystkie Twoje zgłoszenia zostały odebrane i przejrzane przez [% cobrand.council_name %], więc jeśli problem nie jest już aktualny, nie musisz nic robić.
+
+Jeśli uważasz, że problem nie został rozwiązany, możesz zgłosić go ponownie tutaj: [% cobrand.base_url %]
+
+[% FOR report IN reports %]
+
+[% report.title %]
+
+Zgłoszono [% report.time_ago %] temu.
+
+Zobacz zgłoszenie: [% cobrand.base_url_for_report( report ) %]/report/[% report.id %]
+
+----
+
+[% END %]
+
+[% signature %]
+

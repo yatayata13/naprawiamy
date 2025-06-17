@@ -1,0 +1,30 @@
+Temat: Nowe aktualizacje [% site_name %] w zgłoszeniu: '[% report.title %]'
+
+Poprosiłeś(-aś) o powiadomienie e-mail za każdym razem, gdy pojawi się aktualizacja w zgłoszeniu [% site_name %]: [% report.title %].
+
+Poniższe aktualizacje zostały dodane do tego zgłoszenia:
+
+[% INCLUDE '_email_comment_list.txt' %]
+
+[% state_message %]
+
+[% TRY %][% INCLUDE '_alert_update_after_updates.txt' %][% CATCH file %][% END %]
+
+Aby zobaczyć lub odpowiedzieć na te aktualizacje, odwiedź poniższy adres:
+
+    [% problem_url %]
+
+[% TRY %][% INCLUDE '_council_reference_alert_update.txt' problem=report %][% CATCH file %][% END %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail – prosimy na nią nie odpowiadać.
+
+[% signature %]
+
+[% IF unsubscribe_url %]
+Chcesz się wypisać?
+
+Obecnie wysyłamy Ci e-mail za każdym razem, gdy ktoś doda aktualizację do zgłoszenia [% site_name %]: [% report.title %].
+
+kliknij w ten link: [% unsubscribe_url %]
+Jeśli nie chcesz już otrzymywać powiadomień e-mail o aktualizacjach tego zgłoszenia,
+[% END %]

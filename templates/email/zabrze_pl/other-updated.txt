@@ -1,0 +1,20 @@
+Temat: Twoja aktualizacja została zapisana
+
+Witaj [% update.name %],
+
+[% IF cobrand.moniker == 'northnorthants' %]
+Twoja aktualizacja została zapisana w systemie zgłoszeń Highways:
+[% ELSE %]
+Twoja aktualizacja została zapisana na [% site_name %]:
+[% END %]
+[% cobrand.base_url_for_report(problem) %][% update.url %]
+
+[% TRY %][% INCLUDE '_council_reference.txt' %][% CATCH file %][% END %]
+
+Treść Twojej aktualizacji:
+
+[% update.text %]
+
+[% signature %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail – prosimy na nią nie odpowiadać.

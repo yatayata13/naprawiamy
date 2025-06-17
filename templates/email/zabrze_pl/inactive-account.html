@@ -1,0 +1,26 @@
+[%
+
+email_summary = "Aktywujesz konto w serwisie " _ site_name;
+email_columns = 1;
+
+PROCESS '_email_settings.html';
+
+INCLUDE '_email_top.html';
+
+%]
+
+<th style="[% td_style %][% only_column_style %]">
+  <h1 style="[% h1_style %]">Twoje nieaktywne konto</h1>
+  <p style="[% p_style %]">
+Twoje konto [% user.username %] na [% site_name %] jest nieaktywne od [% email_from %]
+[% nget('month', 'months', email_from) %], a my automatycznie usuwamy
+konta, które są nieaktywne po [% anonymize_from %]
+[% nget('month', 'months', anonymize_from) %]. Jeśli chcesz zachować swoje
+konto, zaloguj się na stronie – to utrzyma je aktywnym:
+</p>
+  <p style="margin: 20px auto; text-align: center">
+    <a style="[% button_style %]" href="[% url %]">Odwiedź [% site_name %]</a>
+  </p>
+  <p style="[% p_style %]">Dziękujemy za korzystanie z serwisu.</p>
+
+[% INCLUDE '_email_bottom.html' %]

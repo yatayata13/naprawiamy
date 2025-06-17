@@ -6,15 +6,15 @@ After=network.target
 [Service]
 Type=forking
 User=fms
-PIDFile=/var/www/fixmystreet/fixmystreet.pid
-ExecStartPre=/bin/mkdir -p /var/www/fixmystreet/logs
-ExecStart=/var/www/fixmystreet/fixmystreet/script/server \
+PIDFile=/var/www/naprawiamy/naprawiamy.pid
+ExecStartPre=/bin/mkdir -p /var/www/naprawiamy/logs
+ExecStart=/var/www/naprawiamy/naprawiamy/script/server \
             --port 9000 \
             --env deployment \
             --daemonize \
-            --pid /var/www/fixmystreet/fixmystreet.pid \
-            --access-log /var/www/fixmystreet/logs/fixmystreet.access.log \
-            --error-log /var/www/fixmystreet/logs/fixmystreet.error.log
+            --pid /var/www/naprawiamy/naprawiamy.pid \
+            --access-log /var/www/naprawiamy/logs/naprawiamy.access.log \
+            --error-log /var/www/naprawiamy/logs/naprawiamy.error.log
 ExecStop=kill -TERM $MAINPID
 
 [Install]

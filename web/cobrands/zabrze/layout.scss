@@ -1,0 +1,12 @@
+$mappage-header-height: 6em;
+
+@import "_colours";
+@import "../sass/layout";
+
+#site-logo {
+    background: url(/cobrands/zabrze/images/naprawiamy-zabrze-logo.png) no-repeat;
+    max-width: 100%;
+    height: $mappage-header-height;
+    background-size: contain;
+}
+

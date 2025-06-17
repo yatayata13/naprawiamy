@@ -1,0 +1,17 @@
+Temat: Nowe zgłoszenia na [% site_name %]
+
+Poniższe nowe zgłoszenia zostały dodane do [% site_name %]:
+
+[% INCLUDE '_email_report_list.txt' %]
+
+[% signature %]
+
+Chcesz się wypisać?
+
+Zasubskrybowałeś(-aś) powiadomienia e-mail, gdy ktoś doda nowe zgłoszenie na [% site_name %]. To bezpłatna usługa serwisu [% site_name %].
+
+Jeśli nie chcesz już otrzymywać powiadomień o nowych zgłoszeniach, kliknij w ten link:
+
+[% unsubscribe_url %]
+
+Ta wiadomość została wysłana automatycznie z niemonitorowanego konta e-mail – prosimy na nią nie odpowiadać.

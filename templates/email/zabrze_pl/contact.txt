@@ -1,0 +1,19 @@
+Temat: [% site_name %] - wiadomość: [% subject %]
+
+[% message %]
+
+[% IF complaint %]
+[ [% complaint %] - [% problem_url %] - [% admin_url %] ]
+[% END %]
+
+[%~ IF user_admin_url %]
+[ Edytuj użytkownika: [% user_admin_url %] ]
+[%~ IF user_latest_report_admin_url %]
+[ Edytuj ostatnie zgłoszenie: [% user_latest_report_admin_url %] ]
+[%~ END %]
+[ Pokaż wszystkie zgłoszenia: [% user_reports_admin_url %] ]
+[%~ END %]
+
+-- 
+Wysłano przez formularz kontaktowy na [% host %].
+Adres IP [% ip %], przeglądarka [% user_agent %]

@@ -7,11 +7,11 @@
 
 server {
 
-    access_log /var/www/fixmystreet/logs/access.log;
-    error_log /var/www/fixmystreet/logs/error.log;
+    access_log /var/www/naprawiamy/logs/access.log;
+    error_log /var/www/naprawiamy/logs/error.log;
 
     listen 80;
-    root /var/www/fixmystreet/fixmystreet/web;
+    root /var/www/naprawiamy/naprawiamy/web;
     error_page 503 /down.html;
 
     # Make sure that Javascript and CSS are compressed.  (HTML is
