@@ -10,7 +10,7 @@ if [ ! -f conf/general.yml ]; then
         -e "s,^( *FMS_DB_NAME:).*,\\1 'fixmystreet'," \
         -e "s,^( *FMS_DB_USER:).*,\\1 'postgres'," \
         -e "s,^( *FMS_DB_PASS:).*,\\1 'password'," \
-        -e "s,^( *BASE_URL:).*,\\1 'http://127.0.0.1.nip.io:3000'," \
+        -e "s,^( *BASE_URL:).*,\\1 'http://localhost:3000'," \
         -e "s,^( *MAPIT_URL:).*,\\1 'http://localhost:3000/fakemapit/'," \
         -e "s,^( *MEMCACHED_HOST:).*,\\1 'memcached.svc'," \
         -e "s,^( *SMTP_SMARTHOST:).*,\\1 'email.svc'," \

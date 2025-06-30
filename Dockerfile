@@ -1,11 +1,10 @@
-FROM jgoerzen/debian-base-standard:bullseye
-MAINTAINER sysadmin@mysociety.org
+FROM debian:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG VERSION_OVERRIDE
 
 RUN apt-get -qq update \
-      && apt-get -qq -y install ca-certificates sudo \
+      && apt-get -qq -y install ca-certificates wget sudo \
       && wget -O install-site.sh --no-verbose https://raw.githubusercontent.com/mysociety/commonlib/master/bin/install-site.sh \
       && chmod +x /install-site.sh \
       && echo 'fms ALL=(ALL) NOPASSWD: /var/www/fixmystreet/fixmystreet/bin/install_packages' \
